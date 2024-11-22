@@ -12,9 +12,11 @@ public class Result {
 		this(success);
 		this.message=message;
 	} 
+	
 	public boolean isSuccess() {
 		return this.success;
 	} 
+	
 	public String getMessage() {
 		return this.message;
 	}
