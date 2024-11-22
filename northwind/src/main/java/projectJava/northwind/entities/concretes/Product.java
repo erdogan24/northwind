@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="products")
 public class Product {
-	
+		  
 		@Id
 		@GeneratedValue
 		@Column(name="product_id")
