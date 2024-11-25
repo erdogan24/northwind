@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import projectJava.northwind.business.abstracts.ProductService;
 import projectJava.northwind.core.utilities.results.DataResult;
+import projectJava.northwind.core.utilities.results.Result;
 import projectJava.northwind.core.utilities.results.SuccessDataResult;
+import projectJava.northwind.core.utilities.results.SuccessResult;
 import projectJava.northwind.dataAccess.abstracts.ProductDao;
 import projectJava.northwind.entities.concretes.Product;
 
@@ -30,6 +32,13 @@ public class ProductManager implements ProductService{
 		(this.productDao.findAll(),"Data Listelendi");
 				
 				
+	}
+
+	@Override
+	public Result add(Product product) {
+		this.productDao.save(product);
+		return new SuccessResult("Ürün Eklendi");
+		
 	}
 
 }
