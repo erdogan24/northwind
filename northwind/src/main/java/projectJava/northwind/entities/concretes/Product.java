@@ -7,8 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//@Data (lombok)
-//@AllArgsConstructor(Constructırların hepsinin gitmesini sağlar )
+// @Data (lombok)
+// @AllArgsConstructor(Constructırların hepsinin gitmesini sağlayan lombok)
+// NoArgsConstructor(parametresiz lombok'ın gitmesini sağlar)
 
 @Entity
 @Table(name="products")
