@@ -5,11 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 // @Data (lombok)
 // @AllArgsConstructor(Constructırların hepsinin gitmesini sağlayan lombok)
-// NoArgsConstructor(parametresiz lombok'ın gitmesini sağlar)
+// NoArgsConstructor(parametresiz constructor'ın lombok ile  gitmesini sağlar)
 
 @Entity
 @Table(name="products")
@@ -20,8 +22,8 @@ public class Product {
 		@Column(name="product_id")
 		private int id;
 		
-		@Column(name="category_id")
-		private int categoryId;
+	//	@Column(name="category_id")
+	//	private int categoryId;
 		
 		@Column(name="product_name")
 		private String productName;
@@ -35,15 +37,19 @@ public class Product {
 		@Column(name="quantity_per_unit")
 		private String quantityPerUnit;
 		
+		@ManyToOne()
+		@JoinColumn(name ="category_id")
+		private Category category;
+		
 		public Product() {
 			
 		}
 		
-		public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
+		public Product(int id, String productName, double unitPrice, short unitsInStock,
 				String quantityPerUnit) {
 			super();
 			this.id = id;
-			this.categoryId = categoryId;
+		  //this.categoryId = categoryId;
 			this.productName = productName;
 			this.unitPrice = unitPrice;
 			this.unitsInStock = unitsInStock;
@@ -55,12 +61,13 @@ public class Product {
 		public void setId(int id) {
 			this.id = id;
 		}
-		public int getCategoryId() {
+	/*	public int getCategoryId() {
 			return categoryId;
 		}
 		public void setCategoryId(int categoryId) {
 			this.categoryId = categoryId;
 		}
+												*/
 		public String getProductName() {
 			return productName;
 		}
@@ -87,3 +94,7 @@ public class Product {
 		}
 		
 }
+
+
+
+

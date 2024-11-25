@@ -3,13 +3,14 @@ package projectJava.northwind.entities.concretes;
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Table(name= "categories")
 
 public class Category {
-	
+	@Id
 	@Column(name="category_id")
 	private int categoryId;
 	
@@ -19,6 +20,12 @@ public class Category {
 	@OneToMany(mappedBy = "categories")
 	private List<Product> products;
 
+	
+	public Category() {
+		
+	}
+	
+	
 	public Category(int categoryId, String categoryName, List<Product> products) {
 		super();
 		this.categoryId = categoryId;
