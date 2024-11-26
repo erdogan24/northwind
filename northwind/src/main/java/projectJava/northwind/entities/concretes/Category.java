@@ -2,12 +2,15 @@ package projectJava.northwind.entities.concretes;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Table(name= "categories")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
 
 public class Category {
 	@Id

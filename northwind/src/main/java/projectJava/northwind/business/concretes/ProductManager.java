@@ -53,13 +53,13 @@ public class ProductManager implements ProductService{
 		//business codes!!!
 		
 		return new SuccessDataResult<Product> 
-		(this.productDao.getByProductNameAndCategory(productName,categoryId),"Data Listelendi");
+		(this.productDao.getByProductNameAndCategory_CategoryId(productName,categoryId),"Data Listelendi");
 	}
 
 	@Override
 	public DataResult<List<Product>> getByProductNameOrCategory(String productName, int categoryId) {
 		return new SuccessDataResult<List<Product>> 
-		(this.productDao.getByProductNameOrCategory(productName,categoryId),"Data Listelendi");
+		(this.productDao.getByProductNameOrCategory_CategoryId(productName,categoryId),"Data Listelendi");
 	}
 
 	@Override
