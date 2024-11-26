@@ -2,7 +2,6 @@ package projectJava.northwind.business.abstracts;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.Query;
 
 import projectJava.northwind.core.utilities.results.DataResult;
 import projectJava.northwind.core.utilities.results.Result;
