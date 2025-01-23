@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import projectJava.northwind.entities.concretes.Product;
+import projectJava.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductDao extends JpaRepository<Product,Integer>{
 	
@@ -25,5 +26,5 @@ public interface ProductDao extends JpaRepository<Product,Integer>{
 		
 		List<Product> getByNameAndCategory(String productName, int categoryId);
 		
-		
+		List <ProductWithCategoryDto> getProductWithCategoryDetails();
 }
